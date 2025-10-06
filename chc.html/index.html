@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hg.css">
+    
+</head>
+
+<body>
+    <!-- العناوين الرشئيسية-->
+    <h1> <span>زعرور عبد الوهاب </span> كهرباء السيارات </h1>
+    <p>بسم الله الرحمان الرحيم<br>هذا الموقع خاص ب كهربائي السيارات السيد زعرور عبد الوهاب الكائن مقره بمنطقة النيانة مشتة الطارفة <br> 
+    كهربائي سيارات لمدة اكثر من 25 سنة خبرة </p>
+    <!--الخدمات-->
+    <h2> الخدمات</h2>
+    <nav>
+    <div>
+        <ul>
+            <li>فحص دوري للسيارات</li>
+            <li>اصلاح أعطاب السيارات </li>
+            <li>بيع قطع غيار السيارات</li>
+        </ul>
+    </div>
+    </nav>
+    <main>
+        <div>
+            <h2>حجز موعد</h2>
+            <form>
+                <label for="name">الاسم</label>
+                <input type="text" placeholder="زعرور عبد الوهاب" required><br>
+                <label for="date" >التاريخ</label>
+                <input type="date" required ><br>
+                <label for="car">نوع السيارة</label>
+                <input type="text" placeholder="سيارة اكسنت" required><br>
+                <label for="check">وصف العطب</label>
+                <input type="text" placeholder="عدم الاشتغال صباحا" maxlength="200"><br>
+                <label for="phone">الهاتف</label>
+                <input type="number" placeholder="+213666..." required><br>
+                <button type="submit">تأكيد</button>
+            </form>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  document.querySelector("form").addEventListener("submit", async function (e) {
+    e.preventDefault(); // منع إرسال الفورم التقليدي
+
+    // جمع البيانات من الحقول
+    const name = document.querySelector('input[placeholder="زعرور عبد الوهاب"]').value;
+    const date = document.querySelector('input[type="date"]').value;
+    const car = document.querySelector('input[placeholder="سيارة اكسنت"]').value;
+    const issue = document.querySelector('input[placeholder="عدم الاشتغال صباحا"]').value;
+    const phone = document.querySelector('input[type="number"]').value;
+
+    // تكوين رسالة لواتساب
+    const message = `الاسم: ${name}%0Aالتاريخ: ${date}%0Aنوع السيارة: ${car}%0Aوصف العطب: ${issue}%0Aرقم الهاتف: ${phone}`;
+    const phoneNumber = "213666421571"; // استبدله برقمك على واتساب بدون "+" (مثلاً: 213666000000)
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    // فتح رابط واتساب
+    window.open(whatsappLink, "_blank");
+
+    // تحميل نسخة PDF
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.setFont("Arial");
+    doc.text("معلومات الحجز", 10, 10);
+    doc.text(`الاسم: ${name}`, 10, 20);
+    doc.text(`التاريخ: ${date}`, 10, 30);
+    doc.text(`نوع السيارة: ${car}`, 10, 40);
+    doc.text(`وصف العطب: ${issue}`, 10, 50);
+    doc.text(`رقم الهاتف: ${phone}`, 10, 60);
+
+    doc.save("reservation.pdf");
+  });
+</script>
+
+
+
+    
+    
+</body>
+</html>

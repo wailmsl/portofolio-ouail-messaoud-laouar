@@ -1,34 +1,259 @@
-a:link{
-    margin: 0px; padding: 10px;
-    text-decoration: none;
-    display: inline-flex; justify-content: space-around;
-    border: solid; border-radius: 35px; border-width: 1.5px;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 15px; color: black; transition: 1.8s;
+/* 🌿 إعداد عام */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #f6f9f4; /* خلفية خضراء فاتحة جداً */
+  color: #2b2b2b;
+  line-height: 1.7;}
+ #profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 10%;
+  background-color: #f7f9fc;
+  border-bottom: 3px solid #68d391;
+  flex-wrap: wrap; /* يجعل التصميم متجاوب */
 }
-a:hover{
-    background-color: rgb(10, 48, 48);
-    font-size: 20px;
-    display: inline-block;
-    color: antiquewhite;
+
+/* ===== TEXT ===== */
+.text-box {
+  flex: 1;
+  min-width: 320px;
+  max-width: 600px;
 }
-#firstttle{
-    margin: 0px; padding: 0px;
-    background-color: #3498db;
-    border: #3498db;border-radius: 20px;
-    color: azure; text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+#profile-section h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5em;
+  color: #22543d;
+  margin-bottom: 10px;
 }
-li:hover{
-    color: #0e6251;
-    border: solid; border-radius: 30px; border-color: black;
-    display: inline-block;
+
+#profile-section h2 {
+  font-size: 1.3em;
+  color: #2b6cb0;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
-footer{
-    margin: 0px; padding: 0px;
-    background-color: #3498db;
-    border: #3498db;border-radius: 20px;
-    color: azure; text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    size: 5px; font-size: 10px;
+
+#profile-section hr {
+  width: 80px;
+  border: 2px solid #68d391;
+  margin: 15px 0;
+  border-radius: 5px;
 }
+
+.text-box .intro {
+  color: #444;
+  font-size: 1em;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* ===== PROFIL PROFESSIONNEL ===== */
+.profile-description {
+  background: #ffffff;
+  border-left: 4px solid #68d391;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.profile-description h3 {
+  color: #22543d;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.profile-description p {
+  color: #333;
+  font-size: 0.98em;
+  line-height: 1.6;
+}
+
+/* ===== IMAGE ===== */
+.image-box {
+  flex: 1;
+  text-align: center;
+  min-width: 250px;
+}
+
+.image-box img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #68d391;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.image-box img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  #profile-section {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .text-box {
+    margin-top: 20px;
+  }
+  .profile-description {
+    text-align: left;
+  }
+}
+/* 📌 العناوين */
+h1, h2, h3 {
+  color: #2f855a; /* أخضر طبيعي */
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5em;
+  border-left: 5px solid #68d391;
+  padding-left: 10px;
+}
+
+h3 {
+  font-size: 1.2em;
+  color: #22543d;
+}
+
+/* 🧭 شريط التنقل */
+nav {
+  background: #2f855a; /* أخضر رئيسي */
+  text-align: center;
+  padding: 12px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: #68d391;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #c6f6d5; /* أخضر فاتح */
+}
+
+/* 🧾 الروابط العامة */
+a {
+  text-decoration: none;
+  border: 2px solid #68d391; /* أخضر فاتح */
+  border-radius: 30px;
+  padding: 8px 15px;
+  display: inline-block;
+  margin: 6px 8px;
+  color: #22543d;
+  font-weight: 600;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  background-color: #68d391;
+  color: white;
+  transform: scale(1.03);
+}
+
+/* 📦 المحتوى العام */
+header, main, footer {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+/* 🔹 الفقرات */
+p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* 🔸 القوائم */
+ul {
+  list-style-type: square;
+  padding-left: 25px;
+  color: #333;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+/* 📞 قسم التواصل */
+#Cordonnées a {
+  border-color: #38a169;
+}
+
+#Cordonnées a:hover {
+  background-color: #38a169;
+}
+
+/* ⚙️ الفوتر */
+
+#footer {
+  background-color: #22543d;
+  color: white;
+  padding: 40px 10%;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.footer-info, .footer-social {
+  min-width: 250px;
+}
+
+#footer a {
+  color: #9ae6b4;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  margin: 5px 0;
+  transition: color 0.3s;
+}
+
+#footer a:hover {
+  color: #c6f6d5;
+}
+
+footer h3 {
+  color: #f0fff4;
+  margin-bottom: 10px;
+}
+
+footer p {
+  margin: 5px 0;
+  font-size: 0.95em;
+}
+
+footer .copyright {
+  border-top: 1px solid #2f855a;
+  padding-top: 15px;
+  font-size: 0.9em;
+  color: #c6f6d5;
+}
+
